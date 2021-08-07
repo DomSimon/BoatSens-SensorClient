@@ -17,5 +17,5 @@ Then run in Terminal:
 
 
 
-(optional) You can check if the service runs with 
+(optional) You can check if the service runs with  
 ``` $ sudo systemctl status SensorClient.service ```
