@@ -3,7 +3,9 @@ import time
 import requests
 
 from pathlib import Path
-
+# Please replace here the adresses of your chosen Sensors. 
+# Dont forget to activate 1-Wire in the RaspberryPi configuration. 
+# you find connected Sensors (Pin 4) in the Terminal with "ls /sys/bus/w1/devices/".
 sensor1 = '/sys/bus/w1/devices/28-02131390d8aa/w1_slave'
 sensor2 = '/sys/bus/w1/devices/28-0213137cfeaa/w1_slave'
 
@@ -23,7 +25,6 @@ def readTempLines(sensorName) :
  
         
     temperaturStr = lines[1].find('t=')
-    # Ich überprüfe ob die Temperatur gefunden wurde.
     if temperaturStr != -1 :
         tempData = lines[1][temperaturStr+2:]
         tempCelsius = float(tempData) / 1000.0
@@ -33,6 +34,7 @@ def sendAsJsonToServer(sensor_name, temp):
     
 
     newHeaders = {'Content-type': 'application/json'}
+    # Please insert here your REST postmap. 
     response = requests.post('http://ec2-3-68-226-39.eu-central-1.compute.amazonaws.com:8080/postmap',
                          json={ "sensorname":sensor_name[20:35],
                                 "sensorvalue":temp,
