@@ -9,7 +9,7 @@ Steps to activate the SensorClient as a Service
 
 1.  Copy SensorClient.service to /lib/systemd/system/ and SensorClient.py to /home/root/
 2.  Open the Terminal 
-3.  "$ sudo systemctl daemon-reload"
+__ 3.  $ sudo systemctl daemon-reload
 4.  $ sudo systemctl enable SensorClient.service
 5.  $ sudo systemctl start SensorClient.service
 6.  (optional) you can check if the service runs with $ sudo systemctl status SensorClient.service
