@@ -1,0 +1,12 @@
+[Unit]
+Description=BoatSensSensorClient
+After=multi-user.target
+Conflicts=getty@tty1.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /home/root/SensorClient.py
+StandardInput=tty-force
+
+[Install]
+WantedBy=multi-user.target
