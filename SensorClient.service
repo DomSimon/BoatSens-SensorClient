@@ -5,6 +5,7 @@ Conflicts=getty@tty1.service
 
 [Service]
 Type=simple
+Restart=always
 ExecStart=/usr/bin/python /home/root/SensorClient.py
 StandardInput=tty-force
 
