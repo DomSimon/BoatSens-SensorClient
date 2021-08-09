@@ -21,8 +21,6 @@ def readTempLines(sensorName) :
     while lines[0].strip()[-3:] != 'YES':
         time.sleep(1)
         lines = readTempSensor()
-    
- 
         
     temperaturStr = lines[1].find('t=')
     if temperaturStr != -1 :
@@ -42,8 +40,6 @@ def sendAsJsonToServer(sensor_name, temp):
                                 },
                          headers=newHeaders)
     print('JSON send')
-    
-
 
 
 while True :
@@ -56,13 +52,8 @@ while True :
             print(time.strftime('%H:%M:%S') +" Sensor 2: " + str(temp2) + " °C")
             sendAsJsonToServer(sensor2, temp2)
             time.sleep(60)
-
     except:
         print("exept opened wait 1 Minute")
-        time.sleep(60)
-        
-
-        
+        time.sleep(60)   
     finally:
         print("try part is at finally")
-        
