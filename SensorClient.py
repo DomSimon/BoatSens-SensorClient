@@ -1,8 +1,8 @@
 import time,sys
 import time
 import requests
-
 from pathlib import Path
+
 # Please replace here the adresses of your chosen Sensors. 
 # Dont forget to activate 1-Wire in the RaspberryPi configuration. 
 # you find connected Sensors (Pin 4) in the Terminal with "ls /sys/bus/w1/devices/".
